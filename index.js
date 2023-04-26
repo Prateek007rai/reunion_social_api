@@ -3,10 +3,8 @@ const app = express();
 const port = process.env.PORT||8000;
 const db = require('./config/mongoose');
 
-
-app.get('/',(req,res)=>{
-    res.send("hello ");
-})
+app.use(express.json());
+app.use('/',require('./router/index'));
 
 
 
